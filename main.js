@@ -87,7 +87,7 @@ submit.addEventListener("click", (e) => {
 
       updateBtn.addEventListener("click", (e) => {
         taskInput.value =
-          e.target.parentElement.parentElement.querySelector(".task").innerHTML;
+          e.target.parentElement.parentElement.querySelector(".task").querySelector('h1').innerHTML;
         editingTask = e.target.parentElement.parentElement;
       });
       done.addEventListener("click", (e) => {
