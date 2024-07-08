@@ -26,19 +26,19 @@
     color: #fff;
     font-size: 20px;
     position: absolute;
-    top: 35px; 
-    left: 20px;
+    top: 10px; 
+    left: 10px;
     cursor: pointer;
-    background-color: #111;
+    background-color: #000;
     border-radius: 50%;
     padding: 10px;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     transition: 0.5s;
     box-shadow: 0px 0px 3px #000;
     z-index: 10;
 }
 .container .mood:hover{
-    background-color: #000;
+    background-color: #111;
     color: #f7f7f7;
 }
 .container form {
@@ -222,8 +222,11 @@
 .container.light .mood{
     background-color: #fff;
     color: #000;
-    border: 1px solid #888;
+    /* border: 1px solid #888; */
     box-shadow: 0px 0px 3px #fff;
+}
+.container.light .mood:hover{
+    background-color: #888;
 }
 @media(max-width: 565px) {
 
@@ -272,7 +275,6 @@
         font-size: 10px;
     }
 
-    
     .container .todo-container {
         top: 60%;
     }
