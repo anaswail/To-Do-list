@@ -1,7 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Margarine&family=Playwrite+AU+SA:wght@100..400&display=swap');
+
+
+.playwrite-au-sa-<uniquifier> {
+  font-family: "Playwrite AU SA", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
 * {
     margin: 0;
     padding: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Playwrite AU SA", cursive;
 }
 
 .container {
@@ -10,8 +20,27 @@
     background-color: #222;
     position: relative;
     overflow-y: scroll;
+    transition: 0.5s;
 }
-
+.container .mood{
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 35px; 
+    left: 20px;
+    cursor: pointer;
+    background-color: #111;
+    border-radius: 50%;
+    padding: 10px;
+    border: 1px solid #000;
+    transition: 0.5s;
+    box-shadow: 0px 0px 3px #000;
+    z-index: 10;
+}
+.container .mood:hover{
+    background-color: #000;
+    color: #f7f7f7;
+}
 .container form {
     position: absolute;
     left: 50%;
@@ -19,8 +48,10 @@
     top: 30px;
     background-color: #111;
     width: 450px;
-    padding: 60px 30px;
+    padding: 40px 30px;
     border-radius: 10px;
+    box-shadow: 0px 0px 5px #000;
+    transition: 0.5s;
 }
 
 .container form input {
@@ -33,6 +64,8 @@
     background-color: #222;
     color: #fff;
     outline: none;
+    transition: 0.5s;
+
 }
 
 .container form #submit {
@@ -50,46 +83,90 @@
 .container form input:focus::placeholder {
     opacity: 0;
 }
-.container form button{
+
+.container form button {
     margin: 10px auto;
     width: 96%;
-    padding: 10px ;
+    padding: 10px;
     color: #fff;
     background-color: #222;
     border: 1px solid #000;
     border-radius: 5px;
     transition: 0.2s;
     cursor: pointer;
+    transition: 0.5s;
+
 }
-.container form button:hover{
+
+.container form button:hover {
     background-color: #000;
 }
+
 .container form #submit:hover,
-.container .todo .btns button:hover{
+.container .todo .btns button:hover {
     background-color: #000;
     cursor: pointer;
 }
-.container .todo-container{
+
+.container .todo-container {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translateX(-50%);
 }
-.container .todo-container .todo{
+
+.container .todo-container .todo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 450px;
-    padding: 60px 30px;
+    padding: 40px 30px;
     border-radius: 10px;
     background-color: #111;
     margin: 20px 0;
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px #000;
 }
-.container .todo-container .todo .task{
+.container form h1{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px ;
+
+}
+.container .todo-container .todo h1 {
+    font-size: 25px;
+    color: #fff;
+    transition: 0.5s;
+    display: inline-block;
+}
+
+.container .todo-container .todo.active {
+    opacity: 50%;
+}
+
+.container .todo-container .todo.active h1 {
+    text-decoration: line-through;
+    transition: 0.5s;
+}
+
+.container .todo-container .todo i {
+    cursor: pointer;
+    transition: 0.5s;
+    margin-right: 10px;
+}
+
+.container .todo-container .todo.active i {
+    background-color: #fff;
+    border-radius: 50%;
+
+}
+
+.container .todo-container .todo .task {
     font-size: 30px;
     color: #fff;
 }
-.container .todo .btns button{
+
+.container .todo .btns button {
     background-color: #222;
     border: 1px solid #000;
     padding: 10px;
@@ -97,34 +174,118 @@
     color: #fff;
     font-size: 15px;
     transition: 0.2s;
+    margin-right: 2px;
 }
+/* light mode*/
+.container.light{
+    background-color: #dedede;
+} 
+.container.light form{
+    background-color: #f7f7f7;
 
+}
+.container.light form h1{
+    color: #333;
+}
+.container.light form input{
+    background-color: #d4d4d4b8;
+    border: 1px solid #666;
+    color: #000;
+}
+.container.light form #submit:hover{
+    background-color: #999;
+}
+.container.light form button{
+    background-color: #d4d4d4b8;
+    color: #000;
+    font-weight: bold;
+    border: 1px solid #666;
+}
+.container.light form button:hover{
+    background-color: #999;
+    
+}
+.container.light .todo-container .todo{
+    background-color: #f7f7f7
+}
+.container.light .todo-container .todo .task,
+.container.light .todo-container .todo .task h1{
+    color: #000;
+}
+.container.light .todo-container .todo button{
+    background-color: #333;
+    border: 1px solid #999;
+}
+.container.light .todo-container .todo button:hover{
+    background-color: #111;
+}
+.container.light .mood{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #888;
+    box-shadow: 0px 0px 3px #fff;
+}
 @media(max-width: 565px) {
+
     .container form,
-    .container .todo-container .todo{
+    .container .todo-container .todo {
         width: 300px;
     }
+    .container form #submit {
+        font-size: 10px;
+    }
+    .container form h1{
+        font-size: 20px;
+    }
+    .container .todo-container .todo .task h1{
+        font-size: 12px;
+    }
+    .container .todo-container .todo .task{
+        font-size: 15px;
+    }
+    .container .todo-container .todo .task button{
+        font-size: 10px;
+    }
 }
+
 @media(max-width: 395px) {
+
     .container form,
     .container .todo-container .todo {
         width: 250px;
     }
-    .container form{
+
+    .container form {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     .container form button,
     .container form input,
-    .container form #submit{
+    .container form #submit {
         width: 100%;
     }
-    .container form #submit{
+
+    .container form #submit {
         margin: 5px 0;
+        font-size: 10px;
     }
-    .container .todo-container{
-        top: 56%;
-    }
+
     
+    .container .todo-container {
+        top: 65%;
+    }
+    .container .todo-container .todo{
+        padding: 40px 10px;
+    }
+    .container .todo-container .todo .task h1{
+        font-size: 12px;
+    }
+    .container .todo-container .todo .task{
+        font-size: 15px;
+    }
+    .container .todo-container .todo button{
+        font-size: 10px;
+    }
 }
