@@ -40,6 +40,7 @@ body {
 
 body>h1 {
     color: #fff;
+    margin: 20px;
 }
 
 .container .section {
@@ -90,4 +91,40 @@ body>h1 {
     color: #fff;
     font-weight: bold;
     font-size: 20px;
+}
+@media (max-width: 770px) {
+    body > h1{
+        font-size: 20px;
+    }
+    .container{
+        padding: 30px;
+        flex-direction: column;
+    }
+    .container .section {
+        padding: 20px;
+        margin: 5px 0;
+    }
+    .container .section .time{
+        font-size: 20px;
+    }
+    .container .section .btns button{
+        font-size: 13px;
+    }
+}
+@media (max-width: 265px) {
+    body > h1{
+        font-size: 15px
+    }
+    .container{
+        padding: 20px;
+    }
+    .container .section{
+        padding: 10px;
+    }
+    .contaienr .section .time{
+        font-size: 15px;
+    }
+    .container .section .btns button{
+        font-size: 10px;
+    }
 }
