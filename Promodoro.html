@@ -4,10 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/promodoro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Margarine&family=Playwrite+AU+SA:wght@100..400&display=swap"
+        rel="stylesheet">
     <title>Promodro Timer</title>
 </head>
 <body>
-    
+    <h1>Promodoro Timer</h1>
+    <div class="container">
+        <div class="active-sec section">
+            <div class="time">
+                <div class="timeMinutActive">25</div>
+                <span>:</span>
+                <div class="timeSecondActive">00</div>
+            </div>
+            <div class="btns">
+                <button class="startMin">Start</button>
+                <button class="pauseMin">Pause</button>
+                <button class="resetMin">reset</button>
+            </div>
+        </div>
+        <div class="count-sec section">
+            <div class="count-title">Count</div>
+            <div class="count">0</div>
+        </div>
+        <div class="break-sec section">
+            <div class="time">
+                <div class="timeMinut">5</div>
+                <span>:</span>
+                <div class="timeSecond">00</div>
+            </div>
+            <div class="btns">
+                <button class="startSec">Start</button>
+                <button class="pauseMin">Pause</button>
+                <button class="resetSec">reset</button>
+            </div>
+        </div>
+    </div>
     <script src="JS/promodoro.js"></script>
 </body>
 </html>
