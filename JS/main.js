@@ -119,3 +119,14 @@ if (mood) {
     document.querySelector(".container").classList.toggle("light");
   });
 }
+
+// transform menu
+let transMenu = document.querySelector('.menu');
+let closeMenu = document.querySelector('.closeMenu');
+
+transMenu.addEventListener("click", ()=>{
+  document.querySelector('.menuTab').classList.add('active');
+  closeMenu.addEventListener("click", ()=>{
+    document.querySelector('.menuTab').classList.remove('active');
+  })
+})

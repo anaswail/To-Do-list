@@ -22,22 +22,92 @@
     overflow-y: scroll;
     transition: 0.5s;
 }
-.container .mood{
+.menuTab ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    padding: 50px;
+    list-style: none;
+    text-align: center;
+    border-radius: 5px;
+}
+.menuTab ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 25px;
+    position: relative;
+    transition: 0.5s;
+}
+.menuTab ul li{
+    margin: 10px 0;
+}
+.menuTab ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #999;
+    height: 2px;
+    width: 0;
+    transition: 0.5s;
+}
+.menuTab ul li a:hover::after{
+    width: 100%;
+}
+.menuTab ul li a:hover{
+    color: #999;
+}
+.menuTab{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #000000ca;
+    width: 0;
+    overflow: hidden;
+    height: 100vh;
+    box-shadow: 0px 0px 5px #000;
+    transition: 0.8s;
+}
+.menuTab.active{
+    width: 100%;
+    overflow: auto;
+    /* transition: 0.5s; */
+}
+
+.container .mood,
+.container form .menu,
+.menuTab .closeMenu{
     color: #fff;
     font-size: 20px;
     position: absolute;
     top: 10px; 
-    left: 10px;
     cursor: pointer;
     background-color: #000;
     border-radius: 50%;
     padding: 10px;
-    /* border: 1px solid #000; */
     transition: 0.5s;
     box-shadow: 0px 0px 3px #000;
     z-index: 10;
 }
-.container .mood:hover{
+.menuTab .closeMenu{
+    right: 10px;
+    background-color: #000;
+    transition: 0.3s;
+}
+.menuTab .closeMenu:hover{
+    background-color: #111;
+}
+.container form .menu{
+    right: 10px;
+}
+.container .mood{
+    left: 10px;
+}
+.container .mood:hover,
+.container .menu:hover{
     background-color: #111;
     color: #f7f7f7;
 }
@@ -176,6 +246,7 @@
     transition: 0.2s;
     margin-right: 2px;
 }
+
 /* light mode*/
 .container.light{
     background-color: #dedede;
@@ -219,7 +290,8 @@
 .container.light .todo-container .todo button:hover{
     background-color: #111;
 }
-.container.light .mood{
+.container.light .mood,
+.container.light .menu{
     background-color: #fff;
     color: #000;
     /* border: 1px solid #888; */
@@ -228,6 +300,7 @@
 .container.light .mood:hover{
     background-color: #888;
 }
+
 @media(max-width: 565px) {
 
     .container form,
