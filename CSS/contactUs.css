@@ -191,3 +191,16 @@ body.light .container .link{
     color: #000;
     font-weight: bold;
 }
+@media(max-width: 300px) {
+    .menuTab ul li a{
+        font-size: 13px;
+    }
+    .menuTab ul {
+        width: 90%;
+    }
+    .container .mood,
+    .container .menu{
+        font-size: 10px;
+        top: 5px;
+    }
+}
