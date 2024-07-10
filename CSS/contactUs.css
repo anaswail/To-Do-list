@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Margarine&family=Playwrite+AU+SA:wght@100..400&display=swap');
+.playwrite-au-sa-<uniquifier> {
+  font-family: "Playwrite AU SA", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Playwrite AU SA", cursive;
+}
+
+body{
+    background-color: #222;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #111;
+    padding: 20px 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #000;
+}
+.container .img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 6px solid #000;
+    margin: auto;
+}
+.container .img img{
+    width: 150px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container .link{
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.container .link:hover{
+    background-color: #222;
+}
+.container .link p,
+.container .link i{
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+}
+.menuTab ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    padding: 50px;
+    list-style: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.menuTab ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.menuTab ul li {
+    margin: 10px 0;
+}
+
+.menuTab ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #999;
+    height: 2px;
+    width: 0;
+    transition: 0.5s;
+}
+
+.menuTab ul li a:hover::after {
+    width: 100%;
+}
+
+.menuTab ul li a:hover {
+    color: #999;
+}
+
+.menuTab {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #000000ca;
+    width: 0;
+    overflow: hidden;
+    height: 100vh;
+    box-shadow: 0px 0px 5px #000;
+    transition: 0.8s;
+}
+
+.menuTab.active {
+    width: 100%;
+    overflow: auto;
+    /* transition: 0.5s; */
+}
+
+.container .mood,
+.container .menu,
+.menuTab .closeMenu {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    background-color: #000;
+    border-radius: 50%;
+    padding: 10px;
+    transition: 0.5s;
+    box-shadow: 0px 0px 3px #000;
+    z-index: 10;
+}
+
+.menuTab .closeMenu {
+    right: 10px;
+    background-color: #000;
+    transition: 0.3s;
+}
+
+.menuTab .closeMenu:hover {
+    background-color: #111;
+}
+
+.container .menu {
+    right: 10px;
+}
+
+.container .mood {
+    left: 10px;
+}
+
+.container .mood:hover,
+.container .menu:hover {
+    background-color: #111;
+    color: #f7f7f7;
+}
+
+body.light{
+    background-color: #ededed;
+}
+body.light .container{
+    background-color: #f7f7f7;
+}
+body.light .img{
+    border-color: #999;
+    box-shadow: 0 0 3px #000;
+}
+body.light .container > i{
+    background-color: #fff;
+    color: #000;
+    /* border: 1px solid #888; */
+    box-shadow: 0px 0px 3px #fff;
+}
+body.light .container .link{
+    background-color: #ededed;
+    box-shadow: 0 0 3px #000;
+    color: #000;
+    font-weight: bold;
+}
