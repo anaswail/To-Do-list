@@ -195,6 +195,15 @@ body.light .container .link{
     .menuTab ul{
         width: 70%;
     }
+    .container .link p{
+        font-size: 15px;
+    }
+    .container {
+        width: 50%;
+    }
+    .container .link{
+        width: 80%;
+    }
 }
 @media(max-width: 450px) {
     .menuTab ul li a{
@@ -207,5 +216,14 @@ body.light .container .link{
     .container .menu{
         font-size: 10px;
         top: 5px;
+    }
+    .container .link p{
+        font-size: 12px;
+    }
+    .container {
+        width: 70%;
+    }
+    .container .link{
+        width: 90%;
     }
 }

@@ -48,7 +48,7 @@ submit.addEventListener("click", (e) => {
   if (taskInput.value !== "") {
     if (editingTask) {
       // Update the existing task
-      editingTask.querySelector(".task").innerHTML = taskInput.value;
+      editingTask.querySelector(".task").innerText = taskInput.value;
       editingTask = null; // Reset the editing task
     } else {
       // Create HTML elements for new task
