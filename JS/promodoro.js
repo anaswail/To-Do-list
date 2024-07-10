@@ -1,38 +1,73 @@
-// call active functions 
-let startMin = document.querySelector('.startMin');
-let pauseMin = document.querySelector('.pauseMin');
-let resetMin = document.querySelector('.resetMin');
+// call active elements
+let activeMin = document.querySelector('.activeMin');
+let activeSec = document.querySelector('.activeSec');
 
-// call break functions 
-let startSec = document.querySelector('.startSec');
-let pauseSec = document.querySelector('.pauseSec');
-let resetSec = document.querySelector('.resetSec');
+// call active btns 
+const startActive = document.querySelector('.startActive');
+const pauseActive = document.querySelector('.pauseActive');
+const resetActive = document.querySelector('.resetActive');
 
-// variables active
-let min = 25;
-let sec = 0;
+// call break elements
+let breakMin = document.querySelector('.breakMin');
+let breakSec = document.querySelector('.breakSec');
 
-// active onclick 
-startMin.addEventListener('click', ()=>{
-    if(min > 0){
-        if(sec > 0){
-            sec--;
-            if(sec < 10){
-                document.querySelector('.timeSecActive').innerText ='0' + sec;
-            }
-            else{
-                document.querySelector('.timeSecActive').innerText = sec;
-            }
-        }
-        else if(sec == 0){
-            sec = 59;
-            min--;
-        }
-        document.querySelector('.timeMinutActive;').innerText = min;
+
+var startTimer;
+startActive.addEventListener("click",()=>{
+    if(startTimer === undefined) {
+        startTimer = setInterval(timer, 1000)
     }
     else{
-        min = 25;
-        document.querySelector('.timeMinutActive;').innerText = min;
-        sec = 0;
-    } 
+        alert('timer already Start')
+    }
 })
+pauseActive.addEventListener("click", ()=>{
+    clearInterval(startTimer);
+    startTimer = undefined;
+})
+resetActive.addEventListener("click", ()=>{
+    clearInterval(startTimer);
+    startTimer = undefined;
+    activeMin.innerText = 25;
+    activeSec.innerText = "00"
+
+    breakMin.innerText = 5;
+    breakSec.innerText = "00";
+
+    document.querySelector('.count').innerText = 0;
+})
+function timer () {
+    // start active CountDown
+    if(activeSec.innerText != 0) {
+        activeSec.innerText--;
+    }
+    else if(activeSec.innerText == 0 && activeMin.innerText != 0) {
+        activeSec.innerText = 59;
+        activeMin.innerText--;
+    }
+
+    // Start break CountDown
+    if(activeMin.innerText == 0 && activeSec.innerText == 0) {
+        if(breakSec.innerText != 0) {
+            breakSec.innerText--;
+        }
+        else if(breakSec.innerText == 0 && breakMin.innerText != 0) {
+            breakSec.innerText = 59;
+            breakMin.innerText--;
+        }
+    }
+
+    // start counter 
+    if(activeMin.innerText == 0 && activeSec.innerText == 0 && breakMin.innerText == 0 && breakSec.innerText == 0){
+        
+        document.getElementById('rangeBell').play();
+        activeMin.innerText = 25;
+        activeSec.innerText = "00";
+        
+        breakMin.innerText = 5;
+        breakSec.innerText = "00";
+        document.querySelector('.count').innerText++;
+
+    }
+
+}

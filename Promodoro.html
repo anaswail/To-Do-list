@@ -12,18 +12,20 @@
     <title>Promodro Timer</title>
 </head>
 <body>
+    <audio src="bell sound .m4a"preload="auto" id="rangeBell"></audio>
     <h1>Promodoro Timer</h1>
     <div class="container">
         <div class="active-sec section">
             <div class="time">
-                <div class="timeMinutActive">25</div>
+                <h3>Work</h3>
+                <div class="activeMin">25</div>
                 <span>:</span>
-                <div class="timeSecondActive">00</div>
+                <div class="activeSec">00</div>
             </div>
             <div class="btns">
-                <button class="startMin">Start</button>
-                <button class="pauseMin">Pause</button>
-                <button class="resetMin">reset</button>
+                <button class="startActive">Start</button>
+                <button class="pauseActive">Pause</button>
+                <button class="resetActive">reset</button>
             </div>
         </div>
         <div class="count-sec section">
@@ -32,14 +34,15 @@
         </div>
         <div class="break-sec section">
             <div class="time">
-                <div class="timeMinut">5</div>
+                <h3>Break</h3>
+                <div class="breakMin">5</div>
                 <span>:</span>
-                <div class="timeSecond">00</div>
+                <div class="breakSec">00</div>
             </div>
             <div class="btns">
-                <button class="startSec">Start</button>
-                <button class="pauseMin">Pause</button>
-                <button class="resetSec">reset</button>
+                <button class="startBreak">Start</button>
+                <button class="pauseBreak">Pause</button>
+                <button class="resetBreak">reset</button>
             </div>
         </div>
     </div>

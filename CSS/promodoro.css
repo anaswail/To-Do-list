@@ -43,10 +43,17 @@ body>h1 {
     margin: 20px;
 }
 
+.time h3{
+    position: absolute;
+    top: -40px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
 .container .section {
     background-color: #222;
     height: fit-content;
-    padding: 40px;
+    padding: 50px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px #000;
     margin: 0px 5px;
@@ -59,6 +66,7 @@ body>h1 {
     font-size: 25px;
     color: #fff;
     font-weight: bold;
+    position: relative;
 }
 
 .container .section .btns {
@@ -109,6 +117,10 @@ body>h1 {
     }
     .container .section .btns button{
         font-size: 13px;
+    }
+    .time h3{
+        font-size: 10px;
+        top: -15px;
     }
 }
 @media (max-width: 265px) {
