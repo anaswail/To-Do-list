@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Margarine&family=Playwrite+AU+SA:wght@100..400&display=swap');
+
+
+.playwrite-au-sa-<uniquifier> {
+    font-family: "Playwrite AU SA", cursive;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Playwrite AU SA", cursive;
+}
+
+body {
+    background-color: #222;
+}
+
+body>h1 {
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+}
+
+.container {
+    background-color: #111;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 50px;
+    color: #fff;
+    font-size: 50px;
+    border-radius: 10px;
+}
+
+.menuTab ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    padding: 50px;
+    list-style: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.menuTab ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.menuTab ul li {
+    margin: 10px 0;
+}
+
+.menuTab ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #999;
+    height: 2px;
+    width: 0;
+    transition: 0.5s;
+}
+
+.menuTab ul li a:hover::after {
+    width: 100%;
+}
+
+.menuTab ul li a:hover {
+    color: #999;
+}
+
+.menuTab {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #000000ca;
+    width: 0;
+    overflow: hidden;
+    height: 100vh;
+    box-shadow: 0px 0px 5px #000;
+    transition: 0.8s;
+}
+
+.menuTab.active {
+    width: 100%;
+    overflow: auto;
+    /* transition: 0.5s; */
+}
+
+.container .mood,
+.container .menu,
+.menuTab .closeMenu {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    background-color: #000;
+    border-radius: 50%;
+    padding: 10px;
+    transition: 0.5s;
+    box-shadow: 0px 0px 3px #000;
+    z-index: 10;
+}
+
+.menuTab .closeMenu {
+    right: 10px;
+    background-color: #000;
+    transition: 0.3s;
+}
+
+.menuTab .closeMenu:hover {
+    background-color: #111;
+}
+
+.container .menu {
+    right: 10px;
+}
+
+.container .mood {
+    left: 10px;
+}
+
+.container .mood:hover,
+.container .menu:hover {
+    background-color: #111;
+    color: #f7f7f7;
+}
+
+body.light {
+    background-color: #ededed
+}
+
+body.light .container {
+    background-color: #f7f7f7;
+    color: #000;
+    font-weight: bold;
+}
+
+body.light h1 {
+    color: #000;
+    font-weight: bold;
+}
+
+body.light .container i {
+    background-color: #dedede;
+    color: #000;
+    /* border: 1px solid #888; */
+    box-shadow: 0px 0px 3px #fff;
+    border: 1px solid #dedede;
+}
+
+body.light .container i:hover {
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+@media(max-width: 1120px) {
+    .container {
+        font-size: 30px;
+    }
+}
+
+@media(max-width: 770px) {
+    .container {
+        width: 70%;
+    }
+    body > h1{
+        font-size: 25px;
+    }
+
+}
+@media(max-width: 485px){
+    .container{
+        font-size: 15px;
+        padding: 30px;
+        width: 50%;
+    }
+    .container .mood,
+    .container .menu{
+        font-size: 10px;
+        top: 5px;
+    }
+    .container .mood{
+        left: 5px;
+    }
+    .container .menu{
+        right: 5px;
+    }
+    body > h1{
+        font-size: 20px;
+    }
+}
+@media(max-width: 300px) {
+    .container{
+        font-size: 10px;
+    }
+    body > h1{
+        font-size: 15px;
+    }
+}
